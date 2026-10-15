@@ -1,0 +1,15 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>130</x><y>30</y><w>210</w><h>70</h></coordinates><panel_attributes>_kunde: Kunde_
+--
+name: str="Mina Beispiel"
+adresse:str="Beispielstraße 1"</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>130</x><y>230</y><w>210</w><h>70</h></coordinates><panel_attributes>_bestellung: Bestellung_
+--
+bestellnummer: int=1001
+gesamtpreis:dict()=27.00</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>30</x><y>470</y><w>210</w><h>70</h></coordinates><panel_attributes>_pizza: Gericht_
+--
+name: str="Pizza Margherita"
+preis:float=12.00
+vegetarisch=True</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>310</x><y>470</y><w>210</w><h>70</h></coordinates><panel_attributes>_getraenk: Gericht_
+--
+name: str="Apfelschorle"
+preis:float=3.00
+vegetarisch:bool=True</panel_attributes><additional_attributes></additional_attributes></element></diagram>
