@@ -1,3 +1,8 @@
+import sys
+import os 
+
+sys.path.append(os.path.abspath("src"))
+
 class Kunde:
     def __init__(self, name:str, adresse:str):
         self.name = name
@@ -12,11 +17,9 @@ class Gericht:
 
 
 class Bestellung:
-    def __init__(self, bestellnummer:int, status:str, gericht_mengen:dict):
+    def __init__(self, bestellnummer:int, kunde: Kunde):
         self.bestellnummer = bestellnummer
-        self.status = status
-        self.gericht_mengen = gericht_mengen
-
+        self.kunde = kunde
         self.gericht_mengen: dict[Gericht, int] = {}
 
     def hinzufuegen(self, gericht:Gericht, menge:int):
