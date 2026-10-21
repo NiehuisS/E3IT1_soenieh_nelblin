@@ -1,8 +1,3 @@
-import sys
-import os 
-
-sys.path.append(os.path.abspath("src"))
-
 class Kunde:
     def __init__(self, name:str, adresse:str):
         self.name = name
@@ -17,14 +12,18 @@ class Gericht:
 
 
 class Bestellung:
-    def __init__(self, bestellnummer:int, kunde: Kunde):
+    def __init__(self, bestellnummer:int, status:str, gericht_mengen:dict):
         self.bestellnummer = bestellnummer
-        self.kunde = kunde
+        self.status = status
+
         self.gericht_mengen: dict[Gericht, int] = {}
 
     def hinzufuegen(self, gericht:Gericht, menge:int):
-        self.gericht_mengen[gericht] = menge
-    
+        if gericht in self.gericht_mengen:
+            self.gericht_mengen[gericht] += menge
+        else:
+            self.gericht_mengen[gericht] = menge
+        
     def gesamtpreis(self) -> float:
         gesamt = 0
 
