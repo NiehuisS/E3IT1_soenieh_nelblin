@@ -1,3 +1,8 @@
+import sys
+import os
+
+sys.path.append(os.path.abspath("src"))
+
 class Kunde:
     def __init__(self, name:str, adresse:str):
         self.name = name
