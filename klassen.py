@@ -15,6 +15,8 @@ class Gericht:
         self.preis = preis
         self.vegetarisch = vegetarisch
 
+    def get_preis(self):
+        return self.preis
 
 class Bestellung:
     def __init__(self, bestellnummer:int, status:str, gericht_mengen:dict):
