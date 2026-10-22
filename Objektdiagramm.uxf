@@ -4,9 +4,9 @@ bestellnummer = 1001
 gericht_menge = </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>50</x><y>80</y><w>210</w><h>70</h></coordinates><panel_attributes>_kunde: Kunde_
 --
 name = "Mina Beispiel"
-adresse = "Beispielstr. 1"</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>50</x><y>320</y><w>210</w><h>70</h></coordinates><panel_attributes>_pizza: Gericht_
+adresse = "Beispielstraße 1"</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>50</x><y>320</y><w>210</w><h>70</h></coordinates><panel_attributes>_pizza: Gericht_
 --
-name = "Pizza Margaritta"
+name = "Pizza Margherita"
 preis = 12.00
 vegetarisch = True</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>460</x><y>320</y><w>210</w><h>70</h></coordinates><panel_attributes>_getraenk: Gericht_
 --
@@ -14,4 +14,7 @@ name = "Apfelschorle"
 preis = 3.00
 vegetarisch = True</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>140</y><w>110</w><h>200</h></coordinates><panel_attributes>lt=-
 m=menge = 1</panel_attributes><additional_attributes>10;10;10;180</additional_attributes></element><element><id>Relation</id><coordinates><x>140</x><y>220</y><w>430</w><h>120</h></coordinates><panel_attributes>lt=-
-m=menge = 2</panel_attributes><additional_attributes>410;20;10;20;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>100</y><w>220</w><h>30</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;200;10</additional_attributes></element></diagram>
+m=menge = 2</panel_attributes><additional_attributes>410;20;10;20;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>250</x><y>100</y><w>220</w><h>30</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;200;10</additional_attributes></element><element><id>Text</id><coordinates><x>670</x><y>80</y><w>220</w><h>70</h></coordinates><panel_attributes>Testergebnis: 
+bestellung.gesamtpreis() = 27.00
+pizza.get_preis() = 12.00
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
