@@ -33,7 +33,9 @@
 --
 + name: str
 + preis: float
-+ vegetarisch: bool</panel_attributes>
++ vegetarisch: bool
+--
++ get_preis(): float</panel_attributes>
     <additional_attributes/>
   </element>
 
