@@ -1,5 +1,6 @@
 import sys
 import os
+from abc import ABC, abstractmethod
  
 sys.path.append(os.path.abspath("src"))
  
@@ -15,7 +16,7 @@ class Kunde:
         return self.__adresse
 
  
-class Gericht:
+class Gericht(ABC):
     def __init__(self, name:str, preis:float, vegetarisch:bool = False):
         self.__name = name
         self.__preis = preis
@@ -29,6 +30,10 @@ class Gericht:
 
     def get_vegetarisch(self):
         return self.__vegetarisch
+
+    @abstractmethod
+    def berechne_preis(self) -> float:
+        pass
  
 class Bestellung:
     def __init__(self, bestellnummer: int, status, gericht_mengen=None):
@@ -69,7 +74,7 @@ class Bestellung:
         gesamt = 0
  
         for gericht, menge in self.__gericht_mengen:
-            gesamt += gericht.get_preis() * menge
+            gesamt += gericht.berechne_preis() * menge
         
         return gesamt
  
@@ -80,6 +85,9 @@ class Pizza(Gericht):
  
     def get_groesse(self):
         return self.__groesse
+
+    def berechne_preis(self) -> float:
+            return self.get_preis() * 0.90
  
 class Getraenk(Gericht):
     def __init__(self, name: str, preis: float, volumen: float):
@@ -88,6 +96,9 @@ class Getraenk(Gericht):
  
     def get_volumen(self):
         return self.__volumen
+
+    def berechne_preis(self) -> float:
+        return self.get_preis()
  
 class Pasta(Gericht):
     def __init__(self, name: str, preis: float, cheese: bool):
@@ -96,4 +107,8 @@ class Pasta(Gericht):
  
     def get_cheese(self):
         return self.__cheese
+
+    def berechne_preis(self):
+        return self.get_preis()
+ 
  
