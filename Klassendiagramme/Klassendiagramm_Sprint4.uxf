@@ -1,0 +1,52 @@
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><element><id>UMLGeneric</id><coordinates><x>0</x><y>72</y><w>216</w><h>144</h></coordinates><panel_attributes>Kunde
+--
+- name: str
+- adresse: str
+--
++ Kunde(name:str, adresse:str): void
++ get_name(): str
++ get_adresse(): str</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>297</x><y>72</y><w>360</w><h>189</h></coordinates><panel_attributes>Bestellung
+--
+- bestellnummer: int
+- status: str
+- kunde: Kunde | None
+- gericht_mengen: list
+--
++ Bestellung(bestellnummer: int, status, gericht_mengen=None): void
++ get_bestellnummer(): int
++ get_kunde(): Kunde | None
++ get_status(): str
++ get_gerichte(): list
++ hinzufuegen(gericht: Gericht, menge: int): void
++ gesamtpreis(): float</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>783</x><y>72</y><w>324</w><h>162</h></coordinates><panel_attributes>/Gericht/
+--
+- name: str
+- preis: float
+- vegetarisch: bool = False
+--
++ Gericht(name:str, preis:float, vegetarisch:bool = False): void
++ get_name(): str
++ get_preis(): float
++ get_vegetarisch(): bool
+/+ berechne_preis(): float/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>207</x><y>126</y><w>108</w><h>36</h></coordinates><panel_attributes>lt=&lt;-
+r1=+kunde</panel_attributes><additional_attributes>10;20;100;20</additional_attributes></element><element><id>Relation</id><coordinates><x>648</x><y>126</y><w>153</w><h>36</h></coordinates><panel_attributes>lt=-&gt;
+r1=+gericht_mengen</panel_attributes><additional_attributes>10;20;150;20</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>216</x><y>108</y><w>36</w><h>18</h></coordinates><panel_attributes>1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>261</x><y>108</y><w>36</w><h>18</h></coordinates><panel_attributes>0..*</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>657</x><y>108</y><w>36</w><h>18</h></coordinates><panel_attributes>0..*</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>747</x><y>108</y><w>36</w><h>18</h></coordinates><panel_attributes>0..*</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>549</x><y>387</y><w>252</w><h>90</h></coordinates><panel_attributes>Pizza
+--
+- groesse: str
+--
++ Pizza(name: str, preis: float, groesse: str): void
++ get_groesse(): str
+/+ berechne_preis(): float/
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>387</y><w>297</w><h>90</h></coordinates><panel_attributes>Getraenk
+--
+- volumen: float
+--
++ Getraenk(name: str, preis: float, volumen: float): void
++ get_volumen(): float
+/+ berechne_preis(): float/</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1116</x><y>387</y><w>261</w><h>90</h></coordinates><panel_attributes>Pasta
+--
+- cheese: bool
+--
++ Pasta(name: str, preis: float, cheese: bool): void
++ get_cheese(): bool
+/+ berechne_preis(): float/</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>954</x><y>234</y><w>27</w><h>171</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;170</additional_attributes></element><element><id>Relation</id><coordinates><x>693</x><y>306</y><w>45</w><h>99</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>30;10;10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>711</x><y>306</y><w>513</w><h>99</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;550;10;550;90</additional_attributes></element></diagram>
