@@ -18,6 +18,10 @@ class Kunde:
  
 class Gericht(ABC):
     def __init__(self, name:str, preis:float, vegetarisch:bool = False):
+        
+        if preis < 0:
+            raise ValueError("Der Preis darf nicht negativ sein.")
+        
         self.__name = name
         self.__preis = preis
         self.__vegetarisch = vegetarisch
@@ -50,6 +54,9 @@ class Bestellung:
         if gericht_mengen:
             self.__gericht_mengen = list(gericht_mengen)
 
+    def abschliessen(self):
+        self.__status = "abgeschlossen"
+
     def get_bestellnummer(self):
         return self.__bestellnummer
 
@@ -63,6 +70,12 @@ class Bestellung:
         return list(self.__gericht_mengen)
  
     def hinzufuegen(self, gericht: Gericht, menge: int):
+        if self.__status in ("abgeschlossen", "ausgeliefert"):
+            raise RuntimeError("Die Bestellung darf nicht mehr verändert werden.")
+
+        if menge <= 0:
+            raise ValueError("Die Bestellmenge muss größer als 0 sein.")
+        
         for index, (vorhandenes_gericht, vorhandene_menge) in enumerate(self.__gericht_mengen):
             if vorhandenes_gericht == gericht:
                 self.__gericht_mengen[index] = (gericht, vorhandene_menge + menge)
@@ -111,4 +124,11 @@ class Pasta(Gericht):
     def berechne_preis(self):
         return self.get_preis()
  
- 
+def erstelle_restaurant_bestellung():
+    kunde = Kunde("Max", "Musterstraße 1")
+    bestellung = Bestellung(1, kunde)
+
+    pizza = Pizza("Margherita", 12.00, "mittel")
+    bestellung.hinzufuegen(pizza, 1)
+
+    return bestellung
