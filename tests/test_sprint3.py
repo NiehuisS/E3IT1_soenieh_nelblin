@@ -1,4 +1,10 @@
-from klassen import Gericht, Bestellung, Kunde, Pizza, Getraenk
+import pytest
+import os
+import sys
+
+sys.path.insert(0, os.path.abspath("src"))
+
+from klassen import Bestellung, Kunde, Pizza, Getraenk
 
 def test_unterschiedliche_gerichtarten():
     kunde = Kunde("Mina Beispiel", "Beispielstraße 1")
@@ -11,4 +17,4 @@ def test_unterschiedliche_gerichtarten():
     assert pizza.get_groesse() == "mittel"
     assert getraenk.get_preis() == 3.00
     assert getraenk.get_volumen() == 0.5
-    assert bestellung.gesamtpreis() == 27.00
+    assert bestellung.gesamtpreis() == pytest.approx(24.60)

@@ -1,0 +1,42 @@
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><element><id>UMLGeneric</id><coordinates><x>0</x><y>108</y><w>216</w><h>144</h></coordinates><panel_attributes>Kunde
+--
+- __name: str
+- __adresse: str
+--
++ get_name(): str
++ get_adresse(): str</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>306</x><y>108</y><w>252</w><h>189</h></coordinates><panel_attributes>Bestellung
+--
+- __bestellnummer: int
+- __status: str
+- __kunde: Kunde | None
+- __gericht_mengen: list
+--
++ get_bestellnummer(): int
++ get_kunde(): Kunde | None
++ get_status(): str
++ get_gerichte(): list
++ hinzufuegen(gericht: Gericht, menge: int): None
++ gesamtpreis(): float</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>684</x><y>108</y><w>216</w><h>162</h></coordinates><panel_attributes>Gericht
+--
+- __name: str
+- __preis: float
+- __vegetarisch: bool = False
+--
++ get_name(): str
++ get_preis(): float
++ get_vegetarisch(): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>207</x><y>162</y><w>117</w><h>36</h></coordinates><panel_attributes>lt=&lt;-
+r1=+kunde</panel_attributes><additional_attributes>10;20;110;20</additional_attributes></element><element><id>Relation</id><coordinates><x>549</x><y>162</y><w>153</w><h>36</h></coordinates><panel_attributes>lt=-&gt;
+r1=+gericht_mengen</panel_attributes><additional_attributes>10;20;150;20</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>216</x><y>144</y><w>36</w><h>18</h></coordinates><panel_attributes>1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>270</x><y>144</y><w>36</w><h>18</h></coordinates><panel_attributes>0..*</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>558</x><y>144</y><w>36</w><h>18</h></coordinates><panel_attributes>0..*</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>648</x><y>144</y><w>36</w><h>18</h></coordinates><panel_attributes>0..*</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>432</x><y>423</y><w>189</w><h>90</h></coordinates><panel_attributes>Pizza
+--
+- __groesse: str
+--
++ get_groesse(): str
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>630</x><y>423</y><w>189</w><h>90</h></coordinates><panel_attributes>Getraenk
+--
+- __volumen: float
+--
++ get_volumen(): float</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>828</x><y>423</y><w>189</w><h>90</h></coordinates><panel_attributes>Pasta
+--
+- __cheese: bool
+--
++ get_cheese(): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>711</x><y>261</y><w>27</w><h>180</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;180</additional_attributes></element><element><id>Relation</id><coordinates><x>513</x><y>342</y><w>225</w><h>99</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>230;10;10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>711</x><y>342</y><w>225</w><h>99</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;230;10;230;90</additional_attributes></element></diagram>
