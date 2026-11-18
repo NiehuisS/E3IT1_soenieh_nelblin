@@ -1,5 +1,8 @@
-import sys 
+import pytest
 import os
+import sys
+ 
+sys.path.append(os.path.abspath("src"))
 
 from klassen import Kunde, Gericht, Pizza, Getraenk, Bestellung
 

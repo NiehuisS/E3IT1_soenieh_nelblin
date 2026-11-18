@@ -1,0 +1,14 @@
+import pytest
+import os
+import sys
+ 
+sys.path.append(os.path.abspath("src"))
+
+from klassen import Pizza, hinzufuegen, Bestellung, Kunde, erstelle_restaurant_bestellung
+
+def test_negative_bestellmenge_wird_abgelehnt():
+    bestellung = erstelle_restaurant_bestellung()
+    pizza = Pizza("Salami", 10.00, "groß")
+
+    with pytest.raises(ValueError):
+        bestellung.hinzufuegen(pizza, -3)

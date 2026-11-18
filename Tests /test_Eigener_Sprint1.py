@@ -1,3 +1,10 @@
+
+import pytest
+import os
+import sys
+ 
+sys.path.append(os.path.abspath("src"))
+
 from klassen import Pizza, Bestellung
 
 def test_gesamtpreis_mehrere_pizzen():

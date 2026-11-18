@@ -1,3 +1,9 @@
+import pytest
+import os
+import sys
+ 
+sys.path.append(os.path.abspath("src"))
+
 from klassen import Bestellung, Kunde, Pizza, Getraenk
 
 def test_unterschiedliche_gerichtarten():

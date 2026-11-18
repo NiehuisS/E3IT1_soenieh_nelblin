@@ -1,3 +1,9 @@
+import pytest
+import os
+import sys
+ 
+sys.path.append(os.path.abspath("src"))
+
 from klassen import Kunde, Pizza, Pasta, Getraenk, Bestellung
 
 def test_bestellung_mehrere_gerichte_verwalten(): 

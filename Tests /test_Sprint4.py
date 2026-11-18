@@ -1,3 +1,9 @@
+import pytest
+import os
+import sys
+ 
+sys.path.append(os.path.abspath("src"))
+
 from klassen import Gericht, Bestellung, Kunde, Pizza, Getraenk
 
 def test_gerichte_berechnen_unterschiedliche_preise(): 

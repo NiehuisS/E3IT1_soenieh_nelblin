@@ -1,3 +1,9 @@
+import pytest
+import os
+import sys
+ 
+sys.path.append(os.path.abspath("src"))
+
 from klassen import Pizza, Pasta, Bestellung, Kunde
 
 def test_bestellung_berechnet_gesamtpreis_mit_unterschiedlichen_mengen():
